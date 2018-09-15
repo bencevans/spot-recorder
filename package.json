@@ -1,0 +1,33 @@
+{
+  "name": "@bencevans/spot-recorder",
+  "version": "0.0.0",
+  "description": "OwnTracks MQTT to MongoDB Recorder",
+  "main": "src/index.js",
+  "dependencies": {
+    "log-driver": "^1.2.7",
+    "mongoose": "^5.2.15",
+    "mqtt": "^2.18.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node src/recorder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bencevans/spot-recorder.git"
+  },
+  "keywords": [
+    "owntracks",
+    "location",
+    "record",
+    "mqtt",
+    "mongodb"
+  ],
+  "author": "Ben Evans <ben@bluechimp.io> (https://bencevans.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bencevans/spot-recorder/issues"
+  },
+  "homepage": "https://github.com/bencevans/spot-recorder#readme"
+}
