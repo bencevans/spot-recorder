@@ -10,11 +10,11 @@ const handleError = (err) => {
 }
 
 if (!process.env.MONGO_URL) {
-  return handleError(new Error('Missing MONGO_URL'))
+  handleError(new Error('Missing MONGO_URL'))
 }
 
 if (!process.env.MQTT_URL) {
-  return handleError(new Error('Missing MQTT_URL'))
+  handleError(new Error('Missing MQTT_URL'))
 }
 
 const exec = async () => {
@@ -38,25 +38,14 @@ const exec = async () => {
   })
 
   client.on('message', (topic, message) => {
-  logger.info('Storing: ' + message.toString())
-  let latest = JSON.parse(message.toString())
+    logger.info('Storing: ' + message.toString())
+    let latest = JSON.parse(message.toString())
 
-  if (latest._type === 'location') {
-    const location = new Location(latest)
-    location.save()
-  }
-})
+    if (latest._type === 'location') {
+      const location = new Location(latest)
+      location.save()
+    }
+  })
 }
 
 exec().catch(handleError)
-
-// const client = mqtt.connect(process.env.MQTT_URL, {
-//   username: process.env.MQTT_USERNAME,
-//   password: process.env.MQTT_PASSWORD
-// })
-
-
-
-// client.on('error', (err) => {
-//   throw err
-// })
