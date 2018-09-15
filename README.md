@@ -2,16 +2,6 @@
 
 > OwnTracks MQTT to MongoDB Recorder
 
-## npm
-
-Install
-
-    npm install -g @bencevans/spot-recorder
-
-Run
-
-    MONGO_URL=XXXXX MQTT_URL=XXXXX spot-recorder
-
 ## docker
 
 Pull
